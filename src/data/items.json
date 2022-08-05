@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "headphones",
+        "price": 29.99,
+        "imgUrl" : "/headphones.jpg"
+    },
+    {
+        "id": 2,
+        "name": "keyboard",
+        "price": 82,
+        "imgUrl" : "/keyboard.jpg"
+    },
+    {
+        "id": 3,
+        "name": "mouse",
+        "price": 40.40,
+        "imgUrl" : "/mouse.jpg"
+    },
+    {
+        "id": 4,
+        "name": "speakers",
+        "price": 799,
+        "imgUrl" : "/speakers.jpg"
+    }
+]
