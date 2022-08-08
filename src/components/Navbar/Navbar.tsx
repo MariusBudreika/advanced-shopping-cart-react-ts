@@ -13,9 +13,9 @@ export const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <ul>
-        {navigationLinks.map((navigationLink) => (
-          <li className={styles.navList}>
-            <NavItem title={navigationLink.title} path={navigationLink.path} />
+        {navigationLinks.map(({ title, path }) => (
+          <li className={styles.navList} key={title}>
+            <NavItem title={title} path={path} />
           </li>
         ))}
       </ul>
