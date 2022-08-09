@@ -1,4 +1,5 @@
 import React from "react";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 import { formatCurrency } from "../../utils/formatCurrency";
 import styles from "./StoreItem.module.scss";
 
@@ -10,7 +11,14 @@ type StoreItemProps = {
 };
 
 const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
-  const quantity = 2;
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useShoppingCart();
+  const quantity = getItemQuantity(id);
+
   return (
     <div className={styles.card}>
       <img src={imgUrl} className={styles.cardImages} alt="" />
@@ -20,16 +28,36 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
       </div>
       <div className={styles.cardBottom}>
         {quantity < 1 ? (
-          <button className={styles.addToCart}>+ Add To Cart</button>
+          <button
+            className={styles.addToCart}
+            onClick={() => increaseCartQuantity(id)}
+          >
+            + Add To Cart
+          </button>
         ) : (
           <div className={styles.cart}>
             <div className={styles.cartTop}>
-              <button className={styles.cartTopBtn}>-</button>
+              <button
+                className={styles.cartTopBtn}
+                onClick={() => decreaseCartQuantity(id)}
+              >
+                -
+              </button>
               <div className={styles.cartTopQuantity}>{quantity} in cart</div>
-              <button className={styles.cartTopBtn}>+</button>
+              <button
+                className={styles.cartTopBtn}
+                onClick={() => increaseCartQuantity(id)}
+              >
+                +
+              </button>
             </div>
             <div className={styles.cartBottom}>
-              <button className={styles.cartBottomRemove}>Remove</button>
+              <button
+                className={styles.cartBottomRemove}
+                onClick={() => removeFromCart(id)}
+              >
+                Remove
+              </button>
             </div>
           </div>
         )}
