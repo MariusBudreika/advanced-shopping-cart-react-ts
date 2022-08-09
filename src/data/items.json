@@ -8,19 +8,19 @@
     {
         "id": 2,
         "name": "keyboard",
-        "price": 82,
+        "price": 32,
         "imgUrl" : "/keyboard.jpg"
     },
     {
         "id": 3,
         "name": "mouse",
-        "price": 40.40,
+        "price": 40.99,
         "imgUrl" : "/mouse.jpg"
     },
     {
         "id": 4,
         "name": "speakers",
-        "price": 799,
+        "price": 1200,
         "imgUrl" : "/speakers.jpg"
     }
 ]
